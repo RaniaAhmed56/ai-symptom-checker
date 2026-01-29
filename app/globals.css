@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* ============= LIGHT MODE VARIABLES ============= */
+@theme {
+  --color-medical-blue: #0066cc;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-critical: #991b1b;
+  
+  --background: #ffffff;
+  --foreground: #0066cc;
+  --card: #f0f9ff;
+  --card-foreground: #0066cc;
+  --border: #00ccff;
+  --muted: #0099ff;
+  --muted-foreground: #00ccff;
+}
+
+/* ============= DARK MODE VARIABLES ============= */
+@media (prefers-color-scheme: dark) {
+  @theme inline {
+    --color-medical-blue: #00d4ff;
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+    --color-danger: #f87171;
+    --color-critical: #dc2626;
+    
+    --background: #0f172a;
+    --foreground: #00d4ff;
+    --card: #1a3a4a;
+    --card-foreground: #00d4ff;
+    --border: #00ccff;
+    --muted: #0099ff;
+    --muted-foreground: #00ccff;
+  }
+}
+
+/* ============= GLOBAL STYLES ============= */
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============= GRADIENT BACKGROUNDS ============= */
+.bg-gradient-medical {
+  background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.bg-gradient-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+}
+
+/* ============= ANIMATIONS ============= */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
